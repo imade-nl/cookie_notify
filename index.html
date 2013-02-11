@@ -3,10 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Cookie notify</title>
-<link rel="stylesheet" type="text/css" href="css/cookie.css" />
+<link rel="stylesheet" type="text/css" href="css/cookienotify.css" />
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.cookie.js"></script>
-<script type="text/javascript" src="js/jquery.cookie.notify.js"></script>
+<script type="text/javascript" src="js/jquery.cookienotify.js"></script>
 
 <style type="text/css">
 body, html{margin:0; padding:0;  }
@@ -27,18 +27,32 @@ body, html{margin:0; padding:0;  }
 	<h1>Cookie notify</h1>
 
 <pre>
-// in de &lt;head&gt;<br />&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/cookie.css&quot; /&gt;<br /><br />&lt;script type=&quot;text/javascript&quot; src=&quot;http://code.jquery.com/jquery-1.7.2.min.js&quot;&gt;&lt;/script&gt;<br />&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.cookie.js&quot;&gt;&lt;/script&gt;<br />&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.cookie.notify.js&quot;&gt;&lt;/script&gt;<br /><br />// voor de &lt;/body&gt;<br />&lt;script type=&quot;text/javascript&quot;&gt;<br />	$('body').cookieNotify({'reject_btn':false});<br />&lt;/script&gt;
+// in de &lt;head&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/cookienotify.css&quot; /&gt;
 
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://code.jquery.com/jquery-1.7.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.cookie.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.cookienotify.js&quot;&gt;&lt;/script&gt;
 
-//PHP check
-&lt;?php if($_COOKIE['cookie_accept'] === &quot;true&quot;): ?&gt;<br />	// cookie code hier...
-&lt;?php endif; ?&gt;</pre>
-<p>&nbsp;</p>
+// voor de &lt;/body&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+	$.cookienotify();
+&lt;/script&gt;
+
+// Opties
+$.cookienotify({
+	lang: 		'en', 	// engelse melding
+	message:	'Custom melding met &lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;.',
+	button: 	'Button tekst'	
+});
+</pre>
+	
 <p>&nbsp;</p>
 </div>
 
+
 <script type="text/javascript">
-	$('body').cookieNotify({'reject_btn':false});
+	$.cookienotify();
 </script>
 
 </body>
