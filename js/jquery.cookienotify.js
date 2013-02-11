@@ -19,15 +19,15 @@
 	var settings = {
 	
     	// Functionality
-		lang		:   "nl", 	// default language ("nl" or "en")
-		message		:	"",		// overwrite language message (text)
-		button		:	"",		// overwrite language button (text)
+		lang		:   "", 	// show language message ("nl" or "en")
+		message		:	'Deze website maakt gebruik van cookies. <a href="/cookies">Meer informatie?</a>',	// overwrite language message (text)
+		button		:	"Accepteren",	// overwrite language button (text)
 		cookie_name	:	"cn-hide", 	// remember if users already clicked to "accept"
 												   
 		// messages						   
 		messages	:	{ 
-			nl	: 'Deze website maakt gebruik van cookies. <a href="/cookies">Meer informatie?</a>',
-			en	: 'This website uses cookies. <a href="/cookies">More information?</a>'
+			nl	: 'Deze website maakt gebruik van cookies. <a href="/nl/cookies">Meer informatie?</a>',
+			en	: 'This website uses cookies. <a href="/en/cookies">More information?</a>'
 		},
 					   
 		// text in button
@@ -55,8 +55,13 @@
 			
 			//set defaults
             if( options ) $.extend(settings, options);	
-			if(settings.message == "") settings.message = settings.messages[settings.lang];
-			if(settings.button == "") settings.button = settings.buttons[settings.lang];
+			
+			// if language is set
+			if(settings.lang != "")
+			{
+				settings.message = settings.messages[settings.lang];
+				settings.button = settings.buttons[settings.lang];				
+			}
 		
 			// show the notification
 			methods.show();
