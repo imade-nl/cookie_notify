@@ -59,6 +59,8 @@
 			// if language is set
 			if(settings.lang != "")
 			{
+				// if language doesn't exist, set to english
+				if( ! settings.messages[settings.lang] ) settings.lang = 'en';
 				settings.message = settings.messages[settings.lang];
 				settings.button = settings.buttons[settings.lang];				
 			}
