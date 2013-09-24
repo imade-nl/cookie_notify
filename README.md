@@ -1,7 +1,7 @@
 Cookie notify
 =============
 
-Simpele jquery plugin om cookie melding weer te geven op een website.
+Simpele jquery plugin om cookie melding weer te geven op een website..
 
 	// in de <head>
 	<link rel="stylesheet" type="text/css" href="css/cookienotify.css" />
